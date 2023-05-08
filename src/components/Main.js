@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import images from "../config/images-pathes.json"
 import DreamTeam from "./DreamTeam";
 import {text} from "../config/text";
