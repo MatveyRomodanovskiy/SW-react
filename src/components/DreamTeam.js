@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import images from "../config/images-pathes.json"
+import Friend from "./Friend";
 export const DreamTeam = () => {
-
+    const [viewimage, setImage] = useState('');
+    const getImage = (pic) => {
+        setImage(pic);
+    };
+    const closeHandler = () => {
+        setImage('')
+    }
         return (
-            <section className="float-end w-50 row border mx-1">
+            <div className="float-end w-50 row border mx-1" onClick={closeHandler}>
                 <h2 className="col-12 text-center">Dream Team</h2>
-                {images.friend_pathes.map((p, id) => <img className="col-4 p-1" key={id} src={p} alt="friend"/>)}
-            </section>
+                {viewimage && <img src={viewimage} />}
+                {!viewimage && images.friend_pathes.map((p, id) => <Friend key={id} pos={id+1} picture={p} updateImage={getImage}/>)}
+            </div>
         );
 }
 export default DreamTeam;

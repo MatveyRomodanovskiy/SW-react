@@ -2,18 +2,16 @@ import React from 'react';
 import images from "../config/images-pathes.json"
 import DreamTeam from "./DreamTeam";
 import {text} from "../config/text";
+import Hero from "./Hero";
+import FarGalaxy from "./FarGalaxy";
 export const Main = () => {
     return (
-            <div>
                 <main className="clearfix">
-                    <section className="float-start w-25 me-3">
-                        <img className="w-100" src={images.main} alt="Hero"/>
-                    </section>
+                   <Hero/>
                    <DreamTeam/>
-                    <p className="farGalaxy">{text}
-                    </p>
+                   <FarGalaxy/>
                 </main>
-            </div>
+
         );
 
 }
